@@ -2,19 +2,19 @@
 #include <string>
 using namespace std;
 
-// Structure for an expense
+
 struct Expense {
     string date;
     string category;
     double amount;
-    Expense* next; // For linked list implementation
+    Expense* next; 
 };
 
-// Class to manage expense tracking
+
 class ExpenseTracker {
 private:
-    Expense* head; // Linked list head pointer
-    double totalExpenses; // Store total expenses
+    Expense* head; 
+    double totalExpenses; 
 
 public:
     ExpenseTracker() {
@@ -22,7 +22,7 @@ public:
         totalExpenses = 0.0;
     }
 
-    // Function to add an expense
+    
     void addExpense(string date, string category, double amount) {
         Expense* newExpense = new Expense();
         newExpense->date = date;
@@ -34,7 +34,7 @@ public:
         cout << "Expense added successfully.\n";
     }
 
-    // Function to display all expenses
+   
     void viewExpenses() {
         if (!head) {
             cout << "No expenses to show.\n";
@@ -47,7 +47,7 @@ public:
         }
     }
 
-    // Function to search expenses by category
+    
     void searchByCategory(string category) {
         Expense* temp = head;
         bool found = false;
@@ -63,7 +63,7 @@ public:
         }
     }
 
-    // Function to delete an expense by date
+  
     void deleteExpense(string date) {
         if (!head) {
             cout << "No expenses to delete.\n";
@@ -93,12 +93,12 @@ public:
         cout << "Expense deleted successfully.\n";
     }
 
-    // Function to display total expenses
+   
     void displayTotalExpenses() {
         cout << "Total expenses: $" << totalExpenses << endl;
     }
 
-    // Destructor to clean up memory
+   
     ~ExpenseTracker() {
         while (head) {
             Expense* temp = head;
